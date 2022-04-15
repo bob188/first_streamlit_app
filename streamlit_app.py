@@ -70,7 +70,7 @@ def get_fruit_load_list():
     my_cur.execute("insert into fruit_load_list values ('from streamlit')")
     return my_cur.fetchall()
 
-if streamlit.buttn('Get Fruit Load List'):
+if streamlit.button('Get Fruit Load List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
   streamlit.dataframe(my_data_rows)
